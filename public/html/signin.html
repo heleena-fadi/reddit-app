@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign-in</title>
+    <link rel="stylesheet" href="../css/signin.css">
+</head>
+<body>
+  <nav class="navbar">
+    <section class="logo">
+        <img src="/public/images/reddit-logo.png" alt="logo">
+        <p>Reddit</p>
+    </section>
+  </nav>
+    <div class="container">
+        <div class="right">
+          <h1> Reddit-App </h1>
+          <form id="login-form">
+            <input
+              type="text"
+              name="email"
+              class="input-field"
+              placeholder="Username or email"/>
+            <input type="password" name="password" class="input-field" id="login-password" placeholder="Password" />
+            <button type="submit" class="btn" id="log-btn">Log In</button>
+          </form>
+          <div class="signup-link">
+            Don't have an account? <a href="/signup">Sign up</a>
+          </div>
+        </div>
+      </div>
+    </body>
+</html>
