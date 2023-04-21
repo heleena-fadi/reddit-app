@@ -5,6 +5,7 @@ const postSignup = require("./signup/postSignup");
 const getProfile = require("./profile/getProfile");
 const getLogout = require("./profile/getLogout");
 const createPost = require("./posts/createPosts");
+const getPosts = require("./posts/getPosts");
 
 module.exports = {
   getSignIn,
@@ -14,4 +15,5 @@ module.exports = {
   postSignIn,
   getLogout,
   createPost,
+  getPosts,
 };
