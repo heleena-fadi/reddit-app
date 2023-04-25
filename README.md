@@ -16,10 +16,15 @@ This is a clone of the Reddit app. it lets you post your thoughts and comments o
 
 2. Then Run ``` npm install ```
 
-3. Run it on the local server ``` npm run dev ```
+3. build database  ``` npm run build_db ```
+
+4. Run it on the local server ``` npm run dev ```
+
+
  
  
  
  ## Contributers: 
- [Heleena Darwish]
+ 
+ Heleena Darwish
 
