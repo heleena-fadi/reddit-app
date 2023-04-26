@@ -1,6 +1,5 @@
 # Reddit-App
-[click here to see the app].
-```"https://reddit-app-kpc6.onrender.com/"```.
+[Live Link](https://reddit-app-kpc6.onrender.com).
 ## Description
 This is a clone of the Reddit app. it lets you post your thoughts and comments on others' posts.
 
