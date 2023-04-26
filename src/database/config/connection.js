@@ -1,14 +1,14 @@
 require("dotenv").config();
 const { Pool } = require("pg");
 
-const { NODE_ENV, DATABASE_URL, TEST_URL, DEV_URL } = process.env;
+const { NODE_ENV, DATABASE_URL, TEST_URL, DEV_URL, RENDER_DB } = process.env;
 
 let connectionString = "";
 let ssl = false;
 
 switch (NODE_ENV) {
   case "production":
-    connectionString = DATABASE_URL;
+    connectionString = RENDER_DB;
     ssl = {
       rejectUnauthorized: false,
     };

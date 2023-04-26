@@ -7,14 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sign up</title>
     <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="../css/general.css">
 </head>
 <body>
     <div class="signup-section">
       <nav class="navbar">
-        <section class="logo">
+        <a href="/" class="logo">
             <img src="../images/reddit-logo.png" alt="logo">
             <p>Reddit</p>
-        </section>
+        </a>
       </nav>
       <div class="signup-section">
         <div class="page">
@@ -28,13 +29,26 @@
 
               <form id="signup-form" >
 
-                <input type="text"  id="email" placeholder="Mobile Number or Email" name="email" required>
+                <input type="text"  id="email" placeholder="Email address" name="email" required>
             
                 <input type="text" id="username" placeholder="Username" name="username" required>
               
 
                 <input type="password"  id="password" placeholder="Password" name="password" required>
-    
+                
+                <input type="text" id="user_image" placeholder="Profile image   (optional)" name="user_image">
+                
+                <div>
+                  <input type="radio" id="Female" name="gender" value="Female" required>
+                  <label for="Female">Female</label>
+                </div>
+
+                <div>
+                  <input type="radio" id="Male" name="gender" value="Male">
+                  <label for="Male">Male</label>
+                </div>
+
+
                 <button id="signup_btn">Sign up</button>
               </form>
                 <p>By signing up, you agree to our Terms , Privacy Policy and Cookies Policy .</p>
@@ -45,6 +59,5 @@
         </div>
       </div>
 </body>
-<script src="../js/calls.js"></script>
-<script src="../js/dom.js"></script>
+<script src="../js/signup.js"></script>
 </html>

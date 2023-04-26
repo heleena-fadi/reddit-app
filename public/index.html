@@ -5,165 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reddit-App</title>
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/general.css">
 </head>
 <body>
     <nav class="navbar">
-        <section class="logo">
+        <a href="/" class="logo">
             <img src="../images/reddit-logo.png" alt="logo">
             <p>reddit</p>
-        </section>
-         <section class="search-bar">
-            <input type="text" id ="search-input" placeholder="Search Reddit">
-         </section>
-        
+        </a>
         <section class="profile">
-           <button><a href="/signin" class="signin-btn">Sign in</a></button> 
-           
+            <button><a href="#" id="createPost-btn" class="createPost-btn">Create Post</a></button> 
+           <button id="signin_btn"><a href="/signin"  class="signin-btn">Sign in</a></button> 
+           <button id="signup_btn"><a href="/signup" class="signup-btn">Sign up</a></button> 
+           <button id="logout_btn"><a href="#"  class="signup-btn">Log out</a></button> 
         </section>
     </nav>
-    <div class="divider-section">
-    <section class="sidebar">
-        <ul class="container">
-          <li>
-            <a href="#">
-              <span class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                  <path
-                    d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
-                  />
-                </svg>
-              </span>
-              <span class="title">Home</span>
-            </a>
-          </li>
-      </section>
+
       <div class="cards-container">
   
         <div class="card">
-          <div class="card__header">
-            <img src="../images/istockphoto-1413735503-170667a.jpg" alt="card__image" class="card__image" width="600">
-          </div>
-          <div class="card__body">
-            <h4>Share with your friends</h4>
-            <p>Post content goes here...</p>
-          </div>
-          <div class="card__footer">
-            <div class="user">
-              <img src="https://i.pravatar.cc/40?img=1" alt="user__image" class="user__image">
-              <div class="user__info">
-                <h5>heleena</h5>
-                 <input type="text" placeholder="write your comment here ...." class="comment-area"/>
-                 <button" id="comment-btn">submit</button>
-              </div>
-            </div>
-          </div>
         </div>
-    
-          <div class="card">
-            <div class="card__header">
-              <img src="../images/istockphoto-1413735503-170667a.jpg" alt="card__image" class="card__image" width="600">
-            </div>
-            <div class="card__body">
-              <h4>Share with your friends</h4>
-              <p>Post content goes here...</p>
-            </div>
-            <div class="card__footer">
-              <div class="user">
-                <img src="https://i.pravatar.cc/40?img=1" alt="user__image" class="user__image">
-                <div class="user__info">
-                  <h5>heleena</h5>
-                   <input type="text" placeholder="write your comment here ...." class="comment-area"/>
-                   <button" id="comment-btn">submit</button>
-                </div>
-              </div>
-            </div>
           </div>
-    
-          <div class="card">
-            <div class="card__header">
-              <img src="../images/istockphoto-1413735503-170667a.jpg" alt="card__image" class="card__image" width="600">
-            </div>
-            <div class="card__body">
-              <h4>Share with your friends</h4>
-              <p>Post content goes here...</p>
-            </div>
-            <div class="card__footer">
-              <div class="user">
-                <img src="https://i.pravatar.cc/40?img=1" alt="user__image" class="user__image">
-                <div class="user__info">
-                  <h5>heleena</h5>
-                   <input type="text" placeholder="write your comment here ...." class="comment-area"/>
-                   <button" id="comment-btn">submit</button>
-                </div>
-              </div>
-            </div>
-          </div>
-    
-    
-          <div class="card">
-            <div class="card__header">
-              <img src="../images/istockphoto-1413735503-170667a.jpg" alt="card__image" class="card__image" width="600">
-            </div>
-            <div class="card__body">
-              <h4>Share with your friends</h4>
-              <p>Post content goes here...</p>
-            </div>
-            <div class="card__footer">
-              <div class="user">
-                <img src="https://i.pravatar.cc/40?img=1" alt="user__image" class="user__image">
-                <div class="user__info">
-                  <h5>heleena</h5>
-                   <input type="text" placeholder="write your comment here ...." class="comment-area"/>
-                   <button" id="comment-btn">submit</button>
-                </div>
-              </div>
-            </div>
-          </div>
-    
-        
-          
-          <div class="card">
-            <div class="card__header">
-              <img src="../images/istockphoto-1413735503-170667a.jpg" alt="card__image" class="card__image" width="600">
-            </div>
-            <div class="card__body">
-              <h4>Share with your friends</h4>
-              <p>Post content goes here...</p>
-            </div>
-            <div class="card__footer">
-              <div class="user">
-                <img src="https://i.pravatar.cc/40?img=1" alt="user__image" class="user__image">
-                <div class="user__info">
-                  <h5>heleena</h5>
-                   <input type="text" placeholder="write your comment here ...." class="comment-area"/>
-                   <button" id="comment-btn">submit</button>
-                </div>
-              </div>
-            </div>
-          </div>
-    
-           
-          <div class="card">
-            <div class="card__header">
-              <img src="../images/istockphoto-1413735503-170667a.jpg" alt="card__image" class="card__image" width="600">
-            </div>
-            <div class="card__body">
-              <h4>Share with your friends</h4>
-              <p>Post content goes here...</p>
-            </div>
-            <div class="card__footer">
-              <div class="user">
-                <img src="https://i.pravatar.cc/40?img=1" alt="user__image" class="user__image">
-                <div class="user__info">
-                  <h5>heleena</h5>
-                   <input type="text" placeholder="write your comment here ...." class="comment-area"/>
-                   <button" id="comment-btn">submit</button>
-                </div>
-              </div>
-            </div>
-          </div>
-    <script src="./js/calls.js"></script>
+
+          <section id="create_post_modal" class="create-section hidden">
+            <form  class="create-post-section" action="">
+                <button id="close_modal_button" class="close_modal_button">close</button>
+              <h1 style="text-align:left;">Create New Post</h1>
+                <input
+                type="text"
+                id="modal_title"
+                name="modal_title"
+                class="image-url-input"
+                placeholder="Title"
+                required
+              />
+                  <input
+                    type="text"
+                    id="modal_image"
+                    name="modal_image"
+                    class="image-url-input"
+                    placeholder="Image URL"
+                    required
+                  />
+                  <textarea
+                    name="caption"
+                    type="text"
+                    class="caption-input"
+                    id="modal_content"
+                    placeholder="Caption"
+                  ></textarea>
+                  <p class="error_message" id="modal_error_message"></p>
+                  <input type="submit" value="Share" id="share-post-btn" />
+          </form> 
+          </section>
 <script src="./js/dom.js"></script>
+<script src="./js/domCreatePost.js"></script>
 </body>
 </html>

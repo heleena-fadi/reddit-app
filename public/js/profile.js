@@ -1,20 +1,85 @@
+const addPost = ({ title, content, image, userId }) => {
+    // send data to the back
+    fetch("/create-post", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ title, content, image, userId }),
+    })
+      .then((res) => res.json())
+  
+      .then((res) => {
+        console.log({ res });
+        // localStorage.setItem("user", JSON.stringify(res));
+        // window.location.href = "/profile";
+      })
+      .catch((err) => console.log({ err }));
+    return true;
+  };
+  
+
+  const addComment = (data) => {
+    return fetch("/add-comment", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+  
+      .then((res) => {
+        window.location.reload();
+      })
+      .catch((err) => console.log({ err }));
+  } 
+
+  
+  const logout = () => {
+    fetch("/logout")
+      .then((res) => res.json())
+  
+      .then((res) => {
+        console.log({ res });
+        localStorage.removeItem("user");
+        window.location.href = "/";
+      })
+      .catch((err) => console.log({ err }));
+    return true;
+  };
+
+  const username = document.querySelector("#username");
+const title = document.querySelector("#title");
+const content = document.querySelector("#content");
+const image = document.querySelector("#image");
+const create_post_btn = document.querySelector("#share-post-btn");
+const logout_btn = document.querySelector("#logout_btn");
+
+const userData = JSON.parse(localStorage.getItem("user"));
+if (userData) {
+  username.textContent = userData.username;
+}
 
 // cards section
 const cardsContainer = document.querySelector(".cards-container");
-const userData = JSON.parse(localStorage.getItem("user"));
 
-const getCards = () => {
-  fetch("/posts")
+
+
+const getCards = ({ userId }) => {
+  fetch(`/posts/${userId}`)
     .then((data) => {
       return data.json();
     })
     .then((data) => {
+      console.log({ data });
       renderCards(data);
     })
     .catch(() => {
       alert("server error");
     });
 };
+
 
 function formatDate(timestamp) {
   const date = new Date(timestamp);
@@ -26,7 +91,6 @@ function formatDate(timestamp) {
 
 const renderCards = (cards = []) => {
   cardsContainer.textContent = "";
-
   cards.forEach((card) => {
     const cardDiv = document.createElement("div");
     cardDiv.classList.add("card");
@@ -75,10 +139,8 @@ const renderCards = (cards = []) => {
     card__body.appendChild(card__title);
     card__body.appendChild(card__content);
     cardDiv.appendChild(card__body);
-    
     const card__comments = document.createElement("div");
     card__comments.classList.add("card__comments");
-
     if(card.comments.length === 0) {
       card__comments.textContent = 'no comments yet! be the first...';
     }else {
@@ -116,9 +178,9 @@ const renderCards = (cards = []) => {
         card__comments.appendChild(comment_wrapper);
       })
     }
- 
-    const card__footer = document.createElement("div");
 
+
+    const card__footer = document.createElement("div");
     card__footer.classList.add("card__footer");
 
     const user_div = document.createElement("div");
@@ -126,7 +188,7 @@ const renderCards = (cards = []) => {
 
     const user_img = document.createElement("img");
 
-    user_img.src = (userData && userData.user_image) || "https://i.pravatar.cc/40?img=1";
+    user_img.src = (userData && userData.user_image);
     image.setAttribute("alt", "user__image");
     user_img.classList.add("user__image");
 
@@ -141,83 +203,51 @@ const renderCards = (cards = []) => {
     const comment_btn = document.createElement("button");
     comment_btn.setAttribute("id", "comment-btn");
     comment_btn.textContent = "submit";
-comment_btn.addEventListener('click', (e) => {
-  e.preventDefault();
-  if(userData){
-    if(comment_input.value){
-      addComment({
-        postId: card.id,
-        userId: userData.id,
-        content: comment_input.value
-      })
-}
-  }else {
-    window.location.href = '/signin';
-  }
-})
+
+    comment_btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if(userData){
+        if(comment_input.value){
+          addComment({
+            postId: card.id,
+            userId: userData.id,
+            content: comment_input.value
+          })
+    }
+      }else {
+        window.location.href = '/signin';
+      }
+    })
+
     user__info.appendChild(comment_input);
     user__info.appendChild(comment_btn);
     user_div.appendChild(user_img);
     user_div.appendChild(user__info);
-    card__footer.appendChild(user_div);
     cardDiv.appendChild(card__comments);
+
+    card__footer.appendChild(user_div);
     cardDiv.appendChild(card__footer);
 
     cardsContainer.appendChild(cardDiv);
   });
 };
 
-if(cardsContainer){getCards();}
+getCards({ userId: userData.id });
 
 // end cards
 
-// check user 
-const signin_btn = document.querySelector("#signin_btn");
-const signup_btn = document.querySelector("#signup_btn");
-const logout_btn = document.querySelector("#logout_btn");
-
-
-const addComment = (data) => {
-  return fetch("/add-comment", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  })
-    .then((res) => res.json())
-
-    .then((res) => {
-      window.location.reload();
-    })
-    .catch((err) => console.log({ err }));
-} 
-
-const logout = () => {
-  fetch("/logout")
-    .then((res) => res.json())
-
-    .then(() => {
-      localStorage.removeItem("user");
-      window.location.href = "/";
-    })
-    .catch((err) => console.log({ err }));
-  return true;
-};
-
-window.addEventListener('DOMContentLoaded', () => {
-  if(window.location.pathname === '/'){
-    if(userData && userData.id) {
-      signin_btn.classList.add('hidden')
-      signup_btn.classList.add('hidden')
-    }else {
-      logout_btn.classList.add('hidden')
-    
-    }
+create_post_btn.addEventListener("click", (e) => {
+  if ((title.value, content.value, image.value)) {
+    addPost({
+      title: title.value,
+      content: content.value,
+      image: image.value,
+      userId: userData.id,
+    });
   }
+});
 
-} )
-
-  logout_btn.addEventListener('click', () => {
-    logout()
-  })
+logout_btn.addEventListener("click", (e) => {
+  e.preventDefault();
+  logout();
+});
