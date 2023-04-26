@@ -9,10 +9,9 @@ const {
 
 const postSignup = (req, res, next) => {
   const data = req.body;
-  console.log({data})
   validateSignup(req.body)
     .then(() => {
-      return getUserByEmailQuery(req.body.email);
+      return getUserByEmailQuery(data.email);
     })
     .then((result) => {
       if (result.rows.length !== 0) {
@@ -20,7 +19,7 @@ const postSignup = (req, res, next) => {
       }
     })
     .then(() => {
-      return hashPassword(req.body.password);
+      return hashPassword(data.password);
     })
     .then((hashedPassword) => {
       return addUserQuery({ ...req.body, password: hashedPassword });

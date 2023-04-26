@@ -12,7 +12,7 @@ const getCards = () => {
       renderCards(data);
     })
     .catch(() => {
-      alert("server error");
+     console.log("server error");
     });
 };
 
