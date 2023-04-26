@@ -1,5 +1,6 @@
 # Reddit-App
-[Live Link]```"https://reddit-app-kpc6.onrender.com/"```.
+[click here to see the app].
+```"https://reddit-app-kpc6.onrender.com/"```.
 ## Description
 This is a clone of the Reddit app. it lets you post your thoughts and comments on others' posts.
 
@@ -9,7 +10,7 @@ This is a clone of the Reddit app. it lets you post your thoughts and comments o
 - On the home page, the user can watch all posts from others.
 - The user can add a new post on his profile after sign in to his account.
 - The user can add a comment on other posts after sign in to his account.
-- Once the user finishes browsing, they can log out of their profile by clicking on logout.
+- Once the user finishes browsing, they can log out of their profile by clicking on logout. 
 ## How to Install: 
 
 1. Clone this repo: 
