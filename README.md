@@ -1,5 +1,5 @@
 # Reddit-App
-<!-- [Live Link](""). -->
+[Live Link]("").
 ## Description
 This is a clone of the Reddit app. it lets you post your thoughts and comments on others' posts.
 
