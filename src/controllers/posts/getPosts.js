@@ -53,7 +53,7 @@ const getPosts = (req, res, next) => {
             })
           }
         })
-        res.json(result);
+        res.json(result.reverse());
       })
       .catch((err) => {
         res.status(500).json("server error", { err });
@@ -109,7 +109,7 @@ const getPosts = (req, res, next) => {
           }
         })
 
-        res.json(result);
+        res.json(result.reverse());
       })
       .catch((err) => {
         console.log({err})
