@@ -21,7 +21,7 @@ This is a clone of the Reddit app. it lets you post your thoughts and comments o
 
 4. Run it on the local server ``` npm run dev ```
 
- 
+ ### have fun in your  Journey 🥳 
  ## Contributers: 
  
  Heleena Darwish
