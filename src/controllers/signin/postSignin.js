@@ -22,6 +22,7 @@ const postSignIn = (req, res, next) => {
           username: user.username,
           id: user.id,
         });
+
         res.status(200).cookie("token", token).json(user);
       } else {
         throw next(new CustomError(401, "Wrong password or email"));
@@ -30,8 +31,10 @@ const postSignIn = (req, res, next) => {
     .catch((err) => {
       console.log({ err });
 
-      if (err.details) {
+      if (err?.details) {
         res.json(new CustomError(400, "password not strong enough!"));
+      }else {
+
       }
     });
 };
