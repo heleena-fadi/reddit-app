@@ -11,8 +11,6 @@ const addPost = ({ title, content, image, userId }) => {
   
       .then((res) => {
         console.log({ res });
-        // localStorage.setItem("user", JSON.stringify(res));
-        // window.location.href = "/profile";
       })
       .catch((err) => console.log({ err }));
     return true;
@@ -76,7 +74,7 @@ const getCards = ({ userId }) => {
       renderCards(data);
     })
     .catch(() => {
-      alert("server error");
+      console.log("server error");
     });
 };
 

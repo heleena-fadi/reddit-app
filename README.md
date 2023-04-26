@@ -10,6 +10,7 @@ This is a clone of the Reddit app. it lets you post your thoughts and comments o
 - The user can add a new post on his profile after sign in to his account.
 - The user can add a comment on other posts after sign in to his account.
 - Once the user finishes browsing, they can log out of their profile by clicking on logout. 
+ #### have fun in your  Journey 🥳 
 ## How to Install: 
 
 1. Clone this repo: 
@@ -21,7 +22,16 @@ This is a clone of the Reddit app. it lets you post your thoughts and comments o
 
 4. Run it on the local server ``` npm run dev ```
 
- ### have fun in your  Journey 🥳 
+
+## Technologies Used
+
+- HTML5
+- CSS
+- JavaScript
+- Node.js
+- Express.js
+- PostgreSQL database
+
  ## Contributers: 
  
  Heleena Darwish

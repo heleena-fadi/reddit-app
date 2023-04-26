@@ -30,8 +30,6 @@ const male_image = 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5
 signupBtn.addEventListener("click", (e) => {
     e.preventDefault();
 var gender = document.querySelector("input[type='radio'][name='gender']:checked");
-console.log({gender})
-    console.log("gender", {gender})
     if (email.value && username.value && password.value) {
     postSignup({
         email: email.value,
