@@ -6,7 +6,6 @@ const {
   generateAccessToken,
   comparePasswords,
 } = require("../../helpers");
-// 123456asdA$
 const postSignIn = (req, res, next) => {
   let user = null;
   validateSignin(req.body)

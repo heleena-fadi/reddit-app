@@ -8,6 +8,7 @@ This is a clone of the Reddit app. it lets you post your thoughts and comments o
 - After registering the user logs in to their registered account.
 - On the home page, the user can watch all posts from others.
 - The user can add a new post on his profile after sign in to his account.
+- The user can add a comment on other posts after sign in to his account.
 - Once the user finishes browsing, they can log out of their profile by clicking on logout.
 ## How to Install: 
 
@@ -20,9 +21,6 @@ This is a clone of the Reddit app. it lets you post your thoughts and comments o
 
 4. Run it on the local server ``` npm run dev ```
 
-
- 
- 
  
  ## Contributers: 
  

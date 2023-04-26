@@ -12,6 +12,9 @@ const validateSignup = (body) => {
     .max(30)
     .required(),
     email: Joi.string().email().max(256).required(),
+    gender: Joi.string().allow(null),
+    user_image: Joi.string().allow(null)
+
   });
 
   return schema.validateAsync(body);

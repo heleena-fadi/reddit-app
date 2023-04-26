@@ -11,6 +11,7 @@ const {
   postSignIn,
   createPost,
   getPosts,
+  addComment,
 } = require("../controllers");
 
 router.get("/signin", getSignIn);
@@ -18,6 +19,7 @@ router.get("/signup", getSignUp);
 router.get("/profile", getProfile);
 router.post("/signup", postSignup);
 router.post("/signin", postSignIn);
+router.post("/add-comment", addComment);
 router.get("/posts/:userId", verifyAccessToken, getPosts);
 router.get("/posts", getPosts);
 router.post("/create-post", verifyAccessToken, createPost);

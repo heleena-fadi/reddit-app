@@ -4,15 +4,12 @@ const { addUserQuery, getUserByEmailQuery } = require("../../database/quries");
 
 const {
   validateSignup,
-  validateSignin,
-  generateAccessToken,
   hashPassword,
-  comparePasswords,
 } = require("../../helpers");
 
 const postSignup = (req, res, next) => {
   const data = req.body;
-
+  console.log({data})
   validateSignup(req.body)
     .then(() => {
       return getUserByEmailQuery(req.body.email);

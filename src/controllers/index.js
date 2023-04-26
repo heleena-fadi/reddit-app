@@ -6,6 +6,7 @@ const getProfile = require("./profile/getProfile");
 const getLogout = require("./profile/getLogout");
 const createPost = require("./posts/createPosts");
 const getPosts = require("./posts/getPosts");
+const addComment = require("./comments/addComment");
 
 module.exports = {
   getSignIn,
@@ -16,4 +17,5 @@ module.exports = {
   getLogout,
   createPost,
   getPosts,
+  addComment
 };
